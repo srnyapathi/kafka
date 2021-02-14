@@ -71,3 +71,18 @@ This is a simple command line Consumer API that is used to read the messages fro
 ```
 \kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic test-topic --from-beginning
 ```
+# Optional Items
+## Create one more instance of kafka server (to form a cluster)
+1. Go to config folder and create copy of the server.properties 
+```
+cp server.properties server-1.properties
+```
+2. Open server-1.properties and modify the following lines 
+```
+#This value should be unique no other server should have the same id 
+broker.id=1
+#Server log path also should be unique 
+log.dirs=/tmp/kafka-logs/server1
+```
+
+
